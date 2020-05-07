@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <h1>Common Reasons</h1>
+            <p>
+                Some of the common reasons to work with us is to sell a house that,
+                is too expensive to repair, a divorce, an underwater mortgage, to avoid bankruptcy or
+                just to save on fees from a costly realtor. Whatever the reason, I'm here to help with my experience in the mortgage industry.
+            </p>
+        </div>
+            <div class="col-sm">
+            <h1>Fill Out For Help</h1>
+                <form action="" method="post" novalidate>
+                    <div class="form-group">
+                        {{ form.hidden_tag() }}
+                        <p>
+                            {{ form.name.label }}<br>
+                            {{ form.name(size=32) }}
+                            {% for error in form.name.errors %}
+                            <span style="color: red;">[{{ error }}]</span>
+                            {% endfor %}
+                        </p>
+                        <p>
+                            {{ form.phonenumber.label }}<br>
+                            {{ form.phonenumber(size=32) }}
+                            {% for error in form.phonenumber.errors %}
+                            <span style="color: red;">[{{ error }}]</span>
+                            {% endfor %}
+                        </p>
+                        <p>
+                            {{ form.email.label }}<br>
+                            {{ form.email(size=32) }}
+                            {% for error in form.email.errors %}
+                            <span style="color: red;">[{{ error }}]</span>
+                            {% endfor %}
+                        </p>
+                        <p>
+                            {{ form.propertyaddress.label }}<br>
+                            {{ form.propertyaddress(size=32) }}
+                        </p>
+                        <p>
+                            {{ form.notes.label }}<br>
+                            {{ form.notes(size=32) }}
+                        </p>
+                        <p>
+                        {% for error in form.notes.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </p>
+                    </div>
+                    <p>{{ form.submit() }}</p>
+                </form>
+        </div>
+        <div class="col-sm"></div>
+    </div>
+</div>
+{% endblock %}
